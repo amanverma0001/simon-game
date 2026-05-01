@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --red: #ff4d4d;
+    --yellow: #ffcc00;
+    --green: #00ff88;
+    --purple: #bf00ff;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --shadow-glow: 0 0 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.2rem;
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+.game-container {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.btn-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.btn {
+    height: 160px;
+    width: 160px;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 4px solid transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0; /* Hide numbers from original design */
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.red {
+    background: linear-gradient(145deg, #ff4d4d, #cc0000);
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+}
+
+.yellow {
+    background: linear-gradient(145deg, #ffcc00, #cc9900);
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+}
+
+.green {
+    background: linear-gradient(145deg, #00ff88, #00cc66);
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+}
+
+.purple {
+    background: linear-gradient(145deg, #bf00ff, #8000ff);
+    box-shadow: 0 4px 15px rgba(191, 0, 255, 0.3);
+}
+
+/* Flash Effects */
+.flash {
+    filter: brightness(1.8) contrast(1.2);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow) currentColor;
+}
+
+.red.flash { color: var(--red); }
+.yellow.flash { color: var(--yellow); }
+.green.flash { color: var(--green); }
+.purple.flash { color: var(--purple); }
+
+.userflash {
+    filter: brightness(1.5);
+    transform: scale(0.98);
+}
+
+/* Game Over Animation */
+.game-over {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    .btn { height: 120px; width: 120px; }
+    .game-container { padding: 1.5rem; }
+}
