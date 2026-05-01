@@ -5,7 +5,7 @@
 
 **Neon Simon** is a premium, high-fidelity reimagining of the classic Simon memory game. Built with modern web technologies, it features a stunning **Glassmorphism UI**, **Neon Glow** effects, and a realistic cinematic atmosphere.
 
-![Neon Simon Preview](background.png)
+![Neon Simon Preview](screenshot.png)
 
 ## ✨ Features
 
